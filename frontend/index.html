@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bangkok Bank RAG Assistant</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <span class="masthead-mark" aria-hidden="true">BBL</span>
+      <h1>ผู้ช่วยตอบคำถามนโยบายบริษัท</h1>
+      <span class="masthead-tag">Internal Policy Assistant</span>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="query-heading">
+      <h2 id="query-heading" class="column-label">ถามคำถาม</h2>
+
+      <div class="query-panel">
+        <form id="query-form">
+          <input id="query-input" type="text" placeholder="เช่น ลาป่วยได้กี่วัน?" required autocomplete="off" />
+          <button id="submit-btn" type="submit">ถาม</button>
+        </form>
+        <div class="sample-queries" id="sample-queries">
+          <button type="button" class="sample-chip">พนักงานลาป่วยได้กี่วันต่อปี?</button>
+          <button type="button" class="sample-chip">ทำงานล่วงเวลาได้ค่าตอบแทนไหม?</button>
+          <button type="button" class="sample-chip">นโยบายการเดินทางไปต่างประเทศเป็นยังไง?</button>
+        </div>
+      </div>
+
+      <div class="result-area" id="result">
+        <p class="state-empty">พิมพ์คำถามเกี่ยวกับนโยบายบริษัทด้านบน หรือเลือกจากตัวอย่าง</p>
+      </div>
+    </section>
+
+    <aside aria-labelledby="evidence-heading">
+      <h2 id="evidence-heading" class="column-label">แหล่งอ้างอิง</h2>
+      <div class="evidence-panel" id="evidence-panel">
+        <p class="state-empty" style="border:none; padding:0;">ยังไม่มีคำถาม — เมื่อมีคำตอบ ระบบจะแสดงต้นฉบับนโยบายที่ใช้ตอบไว้ที่นี่</p>
+      </div>
+    </aside>
+  </main>
+
+  <div style="max-width:1120px; margin:0 auto; padding:0 24px 80px;">
+    <div class="kb-section">
+      <div class="kb-header">
+        <div>
+          <h2>คลังนโยบายทั้งหมด</h2>
+          <p class="kb-subtitle">ต้นฉบับนโยบายทุกข้อที่ระบบใช้ค้นหาและอ้างอิง</p>
+        </div>
+        <button id="kb-toggle" type="button" aria-expanded="false" aria-controls="kb-register">แสดงคลังนโยบาย</button>
+      </div>
+      <div class="kb-register" id="kb-register"></div>
+    </div>
+  </div>
+
+  <script src="knowledge_base_text.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

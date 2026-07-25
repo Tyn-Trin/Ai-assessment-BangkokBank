@@ -1,0 +1,7 @@
+langgraph
+langchain-anthropic
+chromadb
+sentence-transformers
+python-dotenv
+fastapi
+uvicorn[standard]
