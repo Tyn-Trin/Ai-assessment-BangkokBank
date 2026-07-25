@@ -1,4 +1,4 @@
-# RAG Policy Assistant
+# RAG Assistant
 
 ระบบ Agentic RAG (Retrieval-Augmented Generation) ที่ตอบคำถามเกี่ยวกับนโยบายบริษัท (ภาษาไทย) โดยอัตโนมัติ
 
