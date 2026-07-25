@@ -10,7 +10,7 @@
 
 ตัวอย่างคำถามที่ไม่ใช่แค่ดึง Raw ดิบมาแต่มีการส่งให้ Ai agent ทำการคิดประมวลคำตอบออกมาด้วย
 
-<img width="1920" height="919" alt="image" src="https://github.com/user-attachments/assets/7232b458-bb4d-4e46-92e5-498ef1bda76e" />
+<img width="1920" height="919" alt="image" src="https://github.com/user-attachments/assets/6d8584a3-efac-4980-bb87-68f031067d31" />
 
 <img width="646" height="912" alt="image" src="https://github.com/user-attachments/assets/d9ac3abf-103e-4792-bb89-56a7bd79bab6" />
 
