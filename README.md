@@ -6,6 +6,15 @@
 
 จัดลำดับการทำงานทั้งหมด (ค้นหา → สรุปคำตอบ) ด้วย **LangGraph** โดยแยกเป็น 2 agent ที่ทำงานต่อกันเป็นลำดับ (multi-agent orchestration): Data Retriever agent ค้นหาข้อมูลอย่างเดียว ไม่ตอบคำถามเอง และ Report Generator agent สังเคราะห์คำตอบจากข้อมูลที่ได้รับมาเท่านั้น
 
+## Screenshot
+
+ตัวอย่างคำถามที่ไม่ใช่แค่ดึง Raw ดิบมาแต่มีการส่งให้ Ai agent ทำการคิดประมวลคำตอบออกมาด้วย
+
+<img width="1920" height="919" alt="image" src="https://github.com/user-attachments/assets/7232b458-bb4d-4e46-92e5-498ef1bda76e" />
+
+<img width="646" height="912" alt="image" src="https://github.com/user-attachments/assets/d9ac3abf-103e-4792-bb89-56a7bd79bab6" />
+
+
 ## Flow การทำงาน
 
 ### 1. Encode (Build Index) — ทำครั้งเดียวตอนเริ่มระบบ
@@ -21,13 +30,7 @@
 
 <img width="8192" height="3029" alt="Chat Ai-2026-07-25-134907" src="https://github.com/user-attachments/assets/c4ea650c-0d75-485e-9812-95f77e818ac3" />
 
-## Screenshot
 
-ตัวอย่างคำถามที่ไม่ใช่แค่ดึง Raw ดิบมาแต่มีการส่งให้ Ai agent ทำการคิดประมวลคำตอบออกมาด้วย
-<img width="1920" height="919" alt="image" src="https://github.com/user-attachments/assets/7232b458-bb4d-4e46-92e5-498ef1bda76e" />
-
-ตัวอย่าง Policy ที่ใส่ไป
-<img width="646" height="912" alt="image" src="https://github.com/user-attachments/assets/d9ac3abf-103e-4792-bb89-56a7bd79bab6" />
 
 
 ## Tech Stack
