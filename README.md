@@ -12,17 +12,23 @@
 
 อ่านเอกสารนโยบายทั้งหมด ตัดเป็น chunk ตามย่อหน้า แปลงแต่ละ chunk เป็นเวกเตอร์ด้วยโมเดล embedding แล้วเก็บลง ChromaDB ไว้ล่วงหน้า ขั้นตอนนี้ไม่มี LLM เข้ามาเกี่ยวข้อง เป็นการเตรียมข้อมูลให้พร้อมค้นหาเท่านั้น
 
-<!-- แปะรูป sequence diagram flow ที่ 1 (encode) ตรงนี้ -->
+<img width="5895" height="3070" alt="Rag-BangkokBank-2026-07-25-135113" src="https://github.com/user-attachments/assets/b2976e0a-1397-4bd8-959e-bc07f74c3454" />
+
 
 ### 2. Query — ทำงานทุกครั้งที่มีคำถามเข้ามา
 
 แปลงคำถามของ user เป็นเวกเตอร์ด้วยโมเดลตัวเดียวกับตอน encode แล้วนำไปเทียบกับเวกเตอร์ที่เก็บไว้ใน ChromaDB เพื่อหา chunk ที่ใกล้เคียงที่สุด จากนั้นส่งข้อความดิบเหล่านั้นให้ Claude สังเคราะห์เป็นคำตอบสุดท้ายพร้อมแสดงแหล่งอ้างอิงกลับไปให้ user
 
-<!-- แปะรูป sequence diagram flow ที่ 2 (query) ตรงนี้ -->
+<img width="8192" height="3029" alt="Chat Ai-2026-07-25-134907" src="https://github.com/user-attachments/assets/c4ea650c-0d75-485e-9812-95f77e818ac3" />
 
 ## Screenshot
 
-<!-- แปะรูปหน้าจอการรันจริงตรงนี้ (หน้าเว็บถาม-ตอบ, แหล่งอ้างอิง, คลังนโยบาย) -->
+ตัวอย่างคำถามที่ไม่ใช่แค่ดึง Raw ดิบมาแต่มีการส่งให้ Ai agent ทำการคิดประมวลคำตอบออกมาด้วย
+<img width="1920" height="919" alt="image" src="https://github.com/user-attachments/assets/7232b458-bb4d-4e46-92e5-498ef1bda76e" />
+
+ตัวอย่าง Policy ที่ใส่ไป
+<img width="646" height="912" alt="image" src="https://github.com/user-attachments/assets/d9ac3abf-103e-4792-bb89-56a7bd79bab6" />
+
 
 ## Tech Stack
 
@@ -44,13 +50,6 @@ pip install -r requirements.txt
 cp .env.example .env   # แล้วใส่ ANTHROPIC_API_KEY จริงของคุณ
 ```
 
-### รันแบบ CLI
-
-```bash
-python main.py
-```
-
-รันตัวอย่างคำถามให้ทันที พร้อม auto-build ChromaDB index ในการรันครั้งแรก
 
 ### รันแบบเว็บ
 
