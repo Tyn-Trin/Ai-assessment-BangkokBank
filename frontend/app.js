@@ -10,6 +10,60 @@ const kbRegister = document.getElementById("kb-register");
 const EMPTY_EVIDENCE_HTML =
   '<p class="state-empty" style="border:none; padding:0;">ยังไม่มีคำถาม — เมื่อมีคำตอบ ระบบจะแสดงต้นฉบับนโยบายที่ใช้ตอบไว้ที่นี่</p>';
 
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function inlineMarkdown(text) {
+  return escapeHtml(text)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/`(.+?)`/g, "<code>$1</code>");
+}
+
+function renderMarkdown(md) {
+  const lines = md.split("\n");
+  const html = [];
+  let listItems = [];
+
+  const flushList = () => {
+    if (listItems.length) {
+      html.push(`<ul>${listItems.join("")}</ul>`);
+      listItems = [];
+    }
+  };
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+
+    if (!line) {
+      flushList();
+      continue;
+    }
+
+    const heading = line.match(/^(#{1,3})\s+(.*)$/);
+    if (heading) {
+      flushList();
+      const level = heading[1].length + 2; // ## -> h4, keeps headings modest inside a card
+      html.push(`<h${level}>${inlineMarkdown(heading[2])}</h${level}>`);
+      continue;
+    }
+
+    const listItem = line.match(/^[-*]\s+(.*)$/);
+    if (listItem) {
+      listItems.push(`<li>${inlineMarkdown(listItem[1])}</li>`);
+      continue;
+    }
+
+    flushList();
+    html.push(`<p>${inlineMarkdown(line)}</p>`);
+  }
+
+  flushList();
+  return html.join("");
+}
+
 kbRegister.innerHTML = KNOWLEDGE_BASE_CHUNKS.map(
   (chunk, i) => `
     <div class="kb-clause">
@@ -49,7 +103,7 @@ async function runQuery(query) {
     result.innerHTML = `
       <div class="answer-card">
         <p class="field-label">คำตอบ</p>
-        <div class="answer-body">${data.final_answer}</div>
+        <div class="answer-body">${renderMarkdown(data.final_answer)}</div>
       </div>
     `;
 
@@ -61,7 +115,7 @@ async function runQuery(query) {
             (s, i) => `
               <div class="evidence-item">
                 <span class="evidence-index">${i + 1}</span>
-                <div>${s}</div>
+                <div>${escapeHtml(s)}</div>
               </div>
             `
           )
