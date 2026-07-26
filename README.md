@@ -10,9 +10,9 @@
 
 ตัวอย่างคำถามที่ไม่ใช่แค่ดึง Raw ดิบมาแต่มีการส่งให้ Ai agent ทำการคิดประมวลคำตอบออกมาด้วย
 
-<img width="1920" height="919" alt="image" src="https://github.com/user-attachments/assets/6d8584a3-efac-4980-bb87-68f031067d31" />
+<img width="1920" height="919" alt="image" src="https://github.com/user-attachments/assets/2b130d00-01e6-4b73-b314-3cf3f540645f" />
 
-<img width="1920" height="919" alt="image" src="https://github.com/user-attachments/assets/9a311f42-3d81-49fc-9600-70c08b09c551" />
+<img width="1920" height="919" alt="image" src="https://github.com/user-attachments/assets/265dba2b-bf7c-4221-b7e5-960658ec381e" />
 
 Knowledge_Base https://github.com/Tyn-Trin/Ai-assessment-BangkokBank/blob/main/knowledge_base.txt
 
