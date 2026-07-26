@@ -12,8 +12,9 @@
 
 <img width="1920" height="919" alt="image" src="https://github.com/user-attachments/assets/6d8584a3-efac-4980-bb87-68f031067d31" />
 
-<img width="646" height="912" alt="image" src="https://github.com/user-attachments/assets/d9ac3abf-103e-4792-bb89-56a7bd79bab6" />
+<img width="1920" height="919" alt="image" src="https://github.com/user-attachments/assets/9a311f42-3d81-49fc-9600-70c08b09c551" />
 
+Knowledge_Base https://github.com/Tyn-Trin/Ai-assessment-BangkokBank/blob/main/knowledge_base.txt
 
 ## Flow การทำงาน
 
